@@ -9,5 +9,8 @@ mqtt:
  keepAliveInterval: 30
  clientId: mqttPubClient
  defaultQos: 1
+
+# 本地共享订阅
+ topic: $local/$share/group1/allInOne
 server:
   port: 9090

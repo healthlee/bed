@@ -46,6 +46,9 @@ public class BeanConfig {
     @Value("${mqtt.serverUri}")
     private String serverUri;
 
+    @Value("${mqtt.topic}")
+    private String topic;
+
     @Bean
     public MqttPahoClientFactory clientFactory() {
         DefaultMqttPahoClientFactory factory = new DefaultMqttPahoClientFactory();
@@ -76,13 +79,13 @@ public class BeanConfig {
     }
 
 
-//    /**
-//     * 订阅
-//     * @return
-//     */
-//    @Bean
-//    public MqttSubscriber mqttAdapter() {
-//        return new MqttSubscriber(properties.getClientId(),clientFactory(),properties.getTopic());
-//    }
+    /**
+     * 订阅
+     * @return
+     */
+    @Bean
+    public MqttSubscriber mqttAdapter() {
+        return new MqttSubscriber(clientId,clientFactory(),topic);
+    }
 
 }
