@@ -1,0 +1,13 @@
+mqtt:
+ username: admin
+ password: 123456
+ cleanSession: false
+ serverUri: tcp://192.168.100.249:1883
+# serverUri: tcp://localhost:1883
+ async: true
+ completionTimeout: 20000
+ keepAliveInterval: 30
+ clientId: mqttPubClient
+ defaultQos: 1
+server:
+  port: 9090
